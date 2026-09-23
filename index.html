@@ -1,1 +1,1079 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<meta name="google-site-verification" content="B1PYzOHudKco-L13xC9AJwBntDj-HrEu2HHq91rTm0k" />
+
+  <meta name="description" content="Disha — Creative Portfolio" />
+
+  <title>Disha — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5f3ee;
+      --text: #171717;
+      --muted: #77736c;
+      --accent: #b66a45;
+      --line: rgba(23, 23, 23, 0.12);
+      --white: #ffffff;
+      --dark: #171717;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 24px 5%;
+      transition: 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(245, 243, 238, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    nav {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      left: 0;
+      bottom: -5px;
+      background: var(--text);
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-contact {
+      border: 1px solid var(--text);
+      padding: 10px 18px;
+      border-radius: 50px;
+      transition: 0.3s;
+    }
+
+    .nav-contact:hover {
+      background: var(--text);
+      color: var(--white);
+    }
+
+    .menu {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      max-width: 1400px;
+      margin: auto;
+      padding: 150px 5% 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-small {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      max-width: 1050px;
+      font-size: clamp(60px, 9vw, 145px);
+      line-height: 0.91;
+      letter-spacing: -7px;
+      font-weight: 600;
+    }
+
+    .hero h1 em {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 80px;
+    }
+
+    .hero-description {
+      max-width: 430px;
+      font-size: 17px;
+      color: var(--muted);
+    }
+
+    .scroll-down {
+      width: 65px;
+      height: 65px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      transition: 0.3s;
+    }
+
+    .scroll-down:hover {
+      background: var(--text);
+      color: var(--white);
+      transform: translateY(5px);
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    section {
+      max-width: 1400px;
+      margin: auto;
+      padding: 120px 5%;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      border-top: 1px solid var(--line);
+    }
+
+    .intro-text {
+      font-size: clamp(30px, 4vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+    }
+
+    .intro-text span {
+      color: var(--muted);
+    }
+
+    /* =========================
+       WORK
+    ========================= */
+
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 55px;
+    }
+
+    .work-title {
+      font-size: clamp(50px, 7vw, 100px);
+      letter-spacing: -5px;
+      line-height: 0.9;
+    }
+
+    .work-count {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 70px 35px;
+    }
+
+    .project {
+      cursor: pointer;
+    }
+
+    .project-image {
+      height: 520px;
+      overflow: hidden;
+      position: relative;
+      background: #ddd;
+    }
+
+    .project:nth-child(2) {
+      margin-top: 130px;
+    }
+
+    .project:nth-child(4) {
+      margin-top: 130px;
+    }
+
+    .project-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .project:hover img {
+      transform: scale(1.06);
+    }
+
+    .project-number {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255,255,255,.85);
+      backdrop-filter: blur(10px);
+      padding: 8px 13px;
+      border-radius: 50px;
+      font-size: 12px;
+    }
+
+    .project-info {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+    }
+
+    .project-name {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .project-category {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills {
+      border-top: 1px solid var(--line);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+    }
+
+    .skills-title {
+      font-size: clamp(45px, 6vw, 85px);
+      line-height: .95;
+      letter-spacing: -4px;
+    }
+
+    .skills-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .skill {
+      display: flex;
+      justify-content: space-between;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 19px;
+    }
+
+    .skill span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: var(--dark);
+      color: var(--white);
+      max-width: none;
+    }
+
+    .about-inner {
+      max-width: 1400px;
+      margin: auto;
+      padding: 120px 5%;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+    }
+
+    .about-title {
+      font-size: clamp(50px, 7vw, 100px);
+      line-height: .9;
+      letter-spacing: -5px;
+    }
+
+    .about-text {
+      font-size: clamp(24px, 3vw, 45px);
+      line-height: 1.2;
+      color: #d7d5d0;
+    }
+
+    .about-text em {
+      font-family: "Playfair Display", serif;
+      color: var(--white);
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      text-align: center;
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-small {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .contact h2 {
+      max-width: 1000px;
+      font-size: clamp(55px, 9vw, 135px);
+      line-height: .9;
+      letter-spacing: -7px;
+    }
+
+    .contact h2 em {
+      font-family: "Playfair Display", serif;
+      color: var(--accent);
+    }
+
+    .email-button {
+      margin-top: 55px;
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--text);
+      color: white;
+      padding: 18px 28px;
+      border-radius: 50px;
+      transition: 0.3s;
+    }
+
+    .email-button:hover {
+      transform: translateY(-5px);
+      background: var(--accent);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 5%;
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 25px;
+    }
+
+    .socials a:hover {
+      color: var(--text);
+    }
+
+    /* =========================
+       REVEAL ANIMATION
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 768px) {
+
+      header {
+        padding: 20px 6%;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 5%;
+        right: 5%;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: .3s;
+      }
+
+      .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .nav-contact {
+        border: none;
+        padding: 0;
+      }
+
+      .hero {
+        padding: 130px 6% 60px;
+      }
+
+      .hero h1 {
+        font-size: clamp(55px, 17vw, 100px);
+        letter-spacing: -5px;
+      }
+
+      .hero-bottom {
+        align-items: flex-start;
+        gap: 30px;
+        flex-direction: column;
+        margin-top: 60px;
+      }
+
+      section {
+        padding: 85px 6%;
+      }
+
+      .intro,
+      .skills-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .intro-text {
+        font-size: 35px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .project:nth-child(2),
+      .project:nth-child(4) {
+        margin-top: 0;
+      }
+
+      .project-image {
+        height: 400px;
+      }
+
+      .work-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .work-title {
+        letter-spacing: -3px;
+      }
+
+      .about-inner {
+        padding: 85px 6%;
+      }
+
+      .about-title {
+        letter-spacing: -3px;
+      }
+
+      .contact {
+        min-height: 65vh;
+      }
+
+      .contact h2 {
+        letter-spacing: -4px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <header id="header">
+    <nav>
+      <a href="#" class="logo">D<span>.</span></a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="nav-contact">Let's Talk ↗</a>
+      </div>
+
+      <div class="menu" id="menu">☰</div>
+    </nav>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-small reveal">
+        Creative Portfolio · 2026
+      </div>
+
+      <h1 class="reveal">
+        Hello, I'm<br>
+        <em>Disha.</em>
+      </h1>
+
+      <div class="hero-bottom reveal">
+
+        <p class="hero-description">
+          I create thoughtful digital experiences, visual identities,
+          and creative solutions that turn ideas into something people
+          remember.
+        </p>
+
+        <a href="#work" class="scroll-down">
+          ↓
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT INTRO
+    ========================= -->
+
+    <section id="about" class="intro">
+
+      <div class="section-label reveal">
+        01 — About
+      </div>
+
+      <div class="intro-text reveal">
+        A creative mind with a passion for
+        <span>design, ideas, and meaningful digital experiences.</span>
+        I believe good work should feel simple,
+        intentional and human.
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         WORK
+    ========================= -->
+
+    <section id="work">
+
+      <div class="work-header">
+
+        <div>
+          <div class="section-label reveal">
+            02 — Selected Work
+          </div>
+
+          <h2 class="work-title reveal">
+            Selected<br>Work
+          </h2>
+        </div>
+
+        <div class="work-count reveal">
+          04 Projects
+        </div>
+
+      </div>
+
+
+      <div class="projects">
+
+        <!-- Project 01 -->
+        <article class="project reveal">
+
+          <div class="project-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
+              alt="Brand identity project"
+            >
+
+            <div class="project-number">
+              01
+            </div>
+
+          </div>
+
+          <div class="project-info">
+
+            <div>
+              <div class="project-name">
+                Brand Identity
+              </div>
+
+              <div class="project-category">
+                Branding · Art Direction
+              </div>
+            </div>
+
+            <div>↗</div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Project 02 -->
+        <article class="project reveal">
+
+          <div class="project-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85"
+              alt="Digital design project"
+            >
+
+            <div class="project-number">
+              02
+            </div>
+
+          </div>
+
+          <div class="project-info">
+
+            <div>
+              <div class="project-name">
+                Digital Experience
+              </div>
+
+              <div class="project-category">
+                UI/UX · Web Design
+              </div>
+            </div>
+
+            <div>↗</div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Project 03 -->
+        <article class="project reveal">
+
+          <div class="project-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=85"
+              alt="Creative editorial project"
+            >
+
+            <div class="project-number">
+              03
+            </div>
+
+          </div>
+
+          <div class="project-info">
+
+            <div>
+              <div class="project-name">
+                Editorial Design
+              </div>
+
+              <div class="project-category">
+                Art Direction · Editorial
+              </div>
+            </div>
+
+            <div>↗</div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Project 04 -->
+        <article class="project reveal">
+
+          <div class="project-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
+              alt="Creative campaign project"
+            >
+
+            <div class="project-number">
+              04
+            </div>
+
+          </div>
+
+          <div class="project-info">
+
+            <div>
+              <div class="project-name">
+                Creative Campaign
+              </div>
+
+              <div class="project-category">
+                Campaign · Social Media
+              </div>
+            </div>
+
+            <div>↗</div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills" class="skills">
+
+      <div class="skills-grid">
+
+        <div>
+
+          <div class="section-label reveal">
+            03 — Expertise
+          </div>
+
+          <h2 class="skills-title reveal">
+            What<br>
+            I Do
+          </h2>
+
+        </div>
+
+        <div class="skills-list reveal">
+
+          <div class="skill">
+            <strong>01</strong>
+            <span>Brand Identity</span>
+          </div>
+
+          <div class="skill">
+            <strong>02</strong>
+            <span>UI / UX Design</span>
+          </div>
+
+          <div class="skill">
+            <strong>03</strong>
+            <span>Web Design</span>
+          </div>
+
+          <div class="skill">
+            <strong>04</strong>
+            <span>Creative Direction</span>
+          </div>
+
+          <div class="skill">
+            <strong>05</strong>
+            <span>Content & Visuals</span>
+          </div>
+
+          <div class="skill">
+            <strong>06</strong>
+            <span>Social Media Design</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT DARK SECTION
+    ========================= -->
+
+    <div class="about">
+
+      <div class="about-inner">
+
+        <div class="about-grid">
+
+          <div class="section-label">
+            04 — Philosophy
+          </div>
+
+          <div class="about-text reveal">
+
+            I don't believe in designing just to
+            <em>make things look good.</em>
+
+            Every color, typeface, interaction and
+            detail should have a reason.
+
+            <br><br>
+
+            The goal is simple:
+            <em>create work that connects.</em>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact" class="contact">
+
+      <div class="contact-small reveal">
+        Have a project in mind?
+      </div>
+
+      <h2 class="reveal">
+        Let's make<br>
+        something <em>great.</em>
+      </h2>
+
+      <a
+        href="mailto:hello@disha.com"
+        class="email-button reveal"
+      >
+        hello@disha.com
+        <span>↗</span>
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        © 2026 Disha. All rights reserved.
+      </div>
+
+      <div class="socials">
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Behance</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /* Header background on scroll */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+
+    });
+
+
+    /* Mobile navigation */
+
+    const menu = document.getElementById("menu");
+    const navLinks = document.getElementById("navLinks");
+
+    menu.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+
+    });
+
+
+    /* Scroll reveal */
+
+    const observer = new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.12
+      }
+
+    );
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      observer.observe(element);
+    });
+
+  </script>
+
+</body>
+</html>
